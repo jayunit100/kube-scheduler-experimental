@@ -1,0 +1,36 @@
+package: github.com/jayunit100/kube-scheduler-experimental
+import:
+- package: github.com/golang/glog
+- package: github.com/prometheus/client_golang
+  version: ^0.8.0
+  subpackages:
+  - prometheus
+- package: github.com/spf13/cobra
+- package: github.com/spf13/pflag
+- package: k8s.io/kubernetes
+  version: ^1.6.0-alpha.0
+  subpackages:
+  - pkg/api
+  - pkg/apis/componentconfig
+  - pkg/apis/componentconfig/v1alpha1
+  - pkg/client/clientset_generated/internalclientset
+  - pkg/client/clientset_generated/internalclientset/typed/core/internalversion
+  - pkg/client/leaderelection
+  - pkg/client/leaderelection/resourcelock
+  - pkg/client/record
+  - pkg/client/restclient
+  - pkg/client/unversioned/clientcmd
+  - pkg/healthz
+  - pkg/runtime
+  - pkg/util/config
+  - pkg/util/configz
+  - pkg/util/flag
+  - pkg/util/logs
+  - pkg/version/verflag
+  - plugin/cmd/kube-scheduler/app
+  - plugin/cmd/kube-scheduler/app/options
+  - plugin/pkg/scheduler
+  - plugin/pkg/scheduler/algorithmprovider
+  - plugin/pkg/scheduler/api
+  - plugin/pkg/scheduler/api/latest
+  - plugin/pkg/scheduler/factory
