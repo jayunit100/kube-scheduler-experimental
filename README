@@ -2,6 +2,12 @@ This is a kubernetes executeable scheduler which uses kube as a baseline depende
 
 It is meant to be hacked on for development.
 
-glide install # grab all the deps.  note that -v doesn't work because of some conflict with empty dirs in /jmespath/go-jmespath/fuzz/corpus
-rm -rf ./vendor/k8s.io/kubernetes/vendor/
-go install
+
+As shown below, make sure to strip-vendor when you install.  Glide will then make it so that multiple declarations of glog 
+flags and so on dont trample one another and cause flag redefined errors.
+
+
+```
+glide install --strip-vendor --strip-vcs
+go install && $GOPATH/bin/kube-scheduler-experimental
+```
