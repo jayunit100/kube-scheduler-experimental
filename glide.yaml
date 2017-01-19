@@ -4,3 +4,4 @@ import:
 - package: k8s.io/kubernetes
   subpackages:
   - plugin/pkg/scheduler/algorithm/predicates
+  - plugin/pkg/scheduler/algorithm/priorities
