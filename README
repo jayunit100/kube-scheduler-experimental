@@ -7,6 +7,11 @@ As shown below, make sure to strip-vendor when you install.  Glide will then mak
 flags and so on dont trample one another and cause flag redefined errors.
 
 
+you can run
+```
+glide update
+```
+then
 ```
 glide install --strip-vendor --strip-vcs
 go install && $GOPATH/bin/kube-scheduler-experimental
