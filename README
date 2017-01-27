@@ -1,4 +1,4 @@
-This is a kubernetes executeable scheduler which uses kube as a baseline dependency.
+# This is a kubernetes executeable scheduler which uses kube as a baseline dependency.
 
 It is meant to be hacked on for development.
 
@@ -16,3 +16,20 @@ then
 glide install --strip-vendor --strip-vcs
 go install && $GOPATH/bin/kube-scheduler-experimental
 ```
+
+# MAINTAINING VENDOR
+
+As of 1-26-2017
+
+The vendor directory needs to be externally maintained and periodically patched, largely because kubernetes client dependencies are in flux.
+
+The way to do this is to simply copy over packages which are missing if dependencies are missing, as an example, take a look at the apimachinery related commits.  
+
+Every once in a while, its good to try 
+
+```
+rm -rf vendor/
+```
+
+And then rerun the install directions above.  If the app still compiles, then the dependencies are stable and vendor/ can be deleted.
+
